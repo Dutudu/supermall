@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <!-- 大写之间用‘-’连接 -->
-    <router-view></router-view>
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
     <main-tabbar></main-tabbar>
   </div>
 </template>
@@ -17,5 +19,4 @@ export default {
 </script>
 
 <style>
-@import "assets/css/base.css";
 </style>

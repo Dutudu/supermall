@@ -1,13 +1,9 @@
 <template>
-  <h2>分类</h2>
+  <h2>我是分类</h2>
 </template>
 
 <script>
-export default {
-
-}
 </script>
 
-<style>
-
+<style scoped>
 </style>
