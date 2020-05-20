@@ -8,12 +8,12 @@ export function request(config) {
   })
   //2.axios的拦截器
   //2.1请求拦截
-  // instance1.interceptors.request.use(aaa => {
-  //   console.log(aaa);
-  //   return aaa; //拦截后需要返回不然，后面的就接受不到了
+  // instance1.interceptors.request.use(res => {
+  //   // console.log(res);
+  //   return res; //拦截后需要返回不然，后面的就接受不到了
 
   // }, err => { //请求拦截失败
-  //   console.log(err);
+  //   return err
 
   // })
   //2.2响应结果拦截
@@ -21,7 +21,8 @@ export function request(config) {
     //响应拦截一般是拿来过滤数据，一般只需要返回res.data
     return res.data //拦截后需要返回不然，后面的就接受不到了
   }, err => {
-    console.log('拦截失败');
+    // console.log('拦截失败');
+    // return err
 
   })
   //3.发送真正的网络请求

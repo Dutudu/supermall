@@ -5,7 +5,7 @@
     <img v-lazy="showImage" @load="imageLoad" />
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
-      <span class="price">{{goodsItem.price}}</span>
+      <span class="price">￥{{goodsItem.price}}</span>
       <span class="collect">{{goodsItem.cfav}}</span>
     </div>
   </div>
@@ -20,10 +20,18 @@ export default {
         this.$bus.$emit("itemImageLoad");
       } else if (this.$route.path.indexOf("/detail") !== -1) {
         this.$bus.$emit("detailImageLoad");
+      } else if (this.$route.path.indexOf("/category") !== -1) {
+        this.$bus.$emit("categoryImageLoad");
       }
     },
     itemClick() {
-      this.$router.push("/detail/" + this.goodsItem.iid);
+      // this.$router.push("/detail/" + this.goodsItem.iid);
+      this.$router.push({
+        name: "detail",
+        params: {
+          iid: this.goodsItem.iid
+        }
+      });
     }
   },
   props: {
@@ -36,15 +44,17 @@ export default {
   },
   computed: {
     showImage() {
-      return this.goodsItem.image || this.goodsItem.show.img;
+      return (
+        this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img
+      );
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .goods-item {
-  width: 48%;
+  width: 47%;
 }
 .goods-item img {
   width: 100%;

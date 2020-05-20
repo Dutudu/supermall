@@ -49,7 +49,4 @@ export default {
 .active {
   color: var(--color-high-text);
 }
-.left {
-  margin-top: 5px;
-}
 </style>>

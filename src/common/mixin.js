@@ -16,3 +16,19 @@ export const backTopMixin = {
     },
   }
 }
+
+export const tabControlMixin = {
+  data() {
+    return {
+      currentType: 'sell',
+      titles: ["pop", "new", "sell"]
+    }
+  },
+  methods: {
+    tabClick(index) {
+      this.currentType = this.titles[index]
+      // console.log(this.currentType);
+
+    }
+  }
+}

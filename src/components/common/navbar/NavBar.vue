@@ -22,7 +22,7 @@ export default {};
   line-height: 44px;
   height: 44px;
   text-align: center;
-  box-shadow: 0 1px 1px rgba(100, 100, 100, 0.2);
+  /* box-shadow: 0 1px 1px rgba(100, 100, 100, 0.2); */
   z-index: 9;
 }
 .left,

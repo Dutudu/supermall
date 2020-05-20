@@ -25,6 +25,7 @@ const routes = [
   path: '/profile',
   component: profile
 }, {
+  name: "detail",
   path: '/detail/:iid',
   component: detail
 }]
